@@ -145,6 +145,12 @@ public abstract class EntityProjectile extends Entity {
 
                     movingObjectPosition.entityHit.attack(ev);
 
+                    if(this instanceof EntityArrow && !ev.isCancelled()){
+                        if(((EntityArrow) this).getPotionId() != 0){
+                            movingObjectPosition.entityHit.addEffect(Potion.getEffect(((EntityArrow) this).getPotionId() - 1, false).setDuration(Potion.getEffect(((EntityArrow) this).getPotionId() - 1, false).getDuration() / 8));
+                        }
+                    }
+
                     this.hadCollision = true;
 
                     if (this.fireTicks > 0) {
