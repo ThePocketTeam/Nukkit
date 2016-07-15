@@ -1162,7 +1162,7 @@ public class Player extends EntityHuman implements CommandSender, InventoryHolde
 
             if (entity instanceof EntityArrow && ((EntityArrow) entity).hadCollision) {
                 Item itemArrow = Item.get(Item.ARROW, ((EntityArrow) entity).getPotionId(), 1);
-                if (this.isSurvival() && !this.inventory.canAddItem(item)) {
+                if (this.isSurvival() && !this.inventory.canAddItem(itemArrow)) {
                     continue;
                 }
 
@@ -2242,7 +2242,7 @@ public class Player extends EntityHuman implements CommandSender, InventoryHolde
                             if (this.inventory.getItemInHand().getId() == Item.BOW) {
 
                                 Item bow = this.inventory.getItemInHand();
-                                ItemArrow itemArrow = null;
+                                Item itemArrow = null;
                                 for(Item item1 : this.inventory.getContents().values()){
                                     if(item1.getId() == Item.ARROW) {
                                         itemArrow = item1;
