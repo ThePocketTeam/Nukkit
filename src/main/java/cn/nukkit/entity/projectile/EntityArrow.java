@@ -3,11 +3,12 @@ package cn.nukkit.entity.projectile;
 import cn.nukkit.Player;
 import cn.nukkit.entity.Entity;
 import cn.nukkit.level.format.FullChunk;
-import cn.nukkit.level.particle.CriticalParticle;
+import cn.nukkit.level.particle.*;
 import cn.nukkit.math.NukkitMath;
 import cn.nukkit.math.NukkitRandom;
-import cn.nukkit.nbt.tag.CompoundTag;
+import cn.nukkit.nbt.tag.*;
 import cn.nukkit.network.protocol.AddEntityPacket;
+import cn.nukkit.potion.Potion;
 
 /**
  * author: MagicDroidX
@@ -59,6 +60,7 @@ public class EntityArrow extends EntityProjectile {
     protected double damage = 2;
 
     protected boolean isCritical;
+    protected int potionId;
 
     public EntityArrow(FullChunk chunk, CompoundTag nbt) {
         this(chunk, nbt, null);
@@ -71,6 +73,12 @@ public class EntityArrow extends EntityProjectile {
     public EntityArrow(FullChunk chunk, CompoundTag nbt, Entity shootingEntity, boolean critical) {
         super(chunk, nbt, shootingEntity);
         this.isCritical = critical;
+
+        if(!this.namedtag.contains("Potion")){
+            this.namedtag.putShort("Potion", 0);
+        }
+
+        this.potionId = this.namedtag.getShort("Potion");
     }
 
     @Override
@@ -82,6 +90,15 @@ public class EntityArrow extends EntityProjectile {
         this.timings.startTiming();
 
         boolean hasUpdate = super.onUpdate(currentTick);
+
+        if(this.potionId != 0) {
+            int[] color = Potion.getEffect(this.potionId - 1, false).getColor();
+            NukkitRandom random = new NukkitRandom();
+            this.level.addParticle(new MobSpellParticle(this.add(
+                this.getWidth() / 2 + ((double) NukkitMath.randomRange(random, -100, 100)) / 500,
+                this.getHeight() / 2 + ((double) NukkitMath.randomRange(random, -100, 100)) / 500,
+                this.getWidth() / 2 + ((double) NukkitMath.randomRange(random, -100, 100)) / 500), color[0], color[1], color[2]));
+        }
 
         if (!this.hadCollision && this.isCritical) {
             NukkitRandom random = new NukkitRandom();
