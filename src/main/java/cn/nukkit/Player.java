@@ -1161,7 +1161,7 @@ public class Player extends EntityHuman implements CommandSender, InventoryHolde
             }
 
             if (entity instanceof EntityArrow && ((EntityArrow) entity).hadCollision) {
-                ItemArrow item = (ItemArrow) Item.get(Item.ARROW, ((EntityArrow) entity).getPotionId(), 1);
+                Item itemArrow = Item.get(Item.ARROW, ((EntityArrow) entity).getPotionId(), 1);
                 if (this.isSurvival() && !this.inventory.canAddItem(item)) {
                     continue;
                 }
@@ -1182,7 +1182,7 @@ public class Player extends EntityHuman implements CommandSender, InventoryHolde
                 pk.target = entity.getId();
                 this.dataPacket(pk);
 
-                this.inventory.addItem(item.clone());
+                this.inventory.addItem(itemArrow.clone());
                 entity.kill();
             } else if (entity instanceof EntityItem) {
                 if (((EntityItem) entity).getPickupDelay() <= 0) {
@@ -2243,9 +2243,9 @@ public class Player extends EntityHuman implements CommandSender, InventoryHolde
 
                                 Item bow = this.inventory.getItemInHand();
                                 ItemArrow itemArrow = null;
-                                for(Item item : this.inventory.getContents().values()){
-                                    if(item.getId() == Item.ARROW) {
-                                        itemArrow = item;
+                                for(Item item1 : this.inventory.getContents().values()){
+                                    if(item1.getId() == Item.ARROW) {
+                                        itemArrow = item1;
                                         break;
                                     }
                                 }
@@ -2254,7 +2254,7 @@ public class Player extends EntityHuman implements CommandSender, InventoryHolde
                                     break;
                                 }
 
-                                if (this.isCreative() && arrow == null){
+                                if (this.isCreative() && itemArrow == null){
                                     itemArrow = new ItemArrow();
                                 }
 
