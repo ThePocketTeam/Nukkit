@@ -120,6 +120,10 @@ public class EntityArrow extends EntityProjectile {
         return hasUpdate;
     }
 
+    public int getPotionId(){
+        return this.potionId;
+    }
+
     @Override
     public void spawnTo(Player player) {
         AddEntityPacket pk = new AddEntityPacket();
