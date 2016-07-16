@@ -1,4 +1,4 @@
-Nukkit
+Nukkit++
 ===================
 ![nukkit](https://github.com/Nukkit/Nukkit/blob/master/images/banner.png)
 
@@ -18,16 +18,13 @@ Nukkit
 
 __A Nuclear-Powered Server Software For Minecraft: Pocket Edition__
 
-[![PayPayl donate button](https://img.shields.io/badge/paypal-donate-yellow.svg)](https://www.paypal.com/cgi-bin/webscr?cmd=_donations&business=1323471525%40qq%2ecom&lc=US&item_name=Nukkit&currency_code=USD&bn=PP%2dDonationsBF%3apaypal%2ddonate%2dyellow%2esvg%3aNonHostedGuest)
-[![Gitter](https://img.shields.io/gitter/room/Nukkit/Nukkit.js.svg?style=flat)](https://gitter.im/Nukkit/Nukkit)
-[![Travis](https://img.shields.io/travis/Nukkit/Nukkit.svg?style=flat)](https://travis-ci.org/Nukkit/Nukkit)
+[![CircleCI](https://circleci.com/gh/ThePocketTeam/Nukkit/tree/master.png?circle-token=143b784db794a43173e9850f13eed6f6be1f8c8c)](https://circleci.com/gh/ThePocketTeam/Nukkit)
 
 -------------
 
-Get Nukkit
+Get Nukkit++
 -------------
-* __[Official Site](https://nukkit.io)__
-* __[Circle CI](https://circleci.com/gh/Nukkit/Nukkit/tree/master/)__ (**login required**)
+* __[Circle CI](https://circleci.com/gh/ThePocketTeam/Nukkit/tree/master/)__ (**login required**)
 
 Introduction
 -------------
