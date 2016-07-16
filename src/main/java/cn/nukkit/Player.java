@@ -1481,6 +1481,13 @@ public class Player extends EntityHuman implements CommandSender, InventoryHolde
                 }
             }
 
+            for(Inventory inv : new ArrayList<>(this.windowIndex.values())){
+                if(inv.equals(this.inventory)){
+                    this.inventory.sendArmorContents(this);
+                }
+                inv.sendContents(this);
+            }
+
             if (!this.isSpectator() && this.speed != null) {
                 if (this.onGround) {
                     if (this.inAirTicks != 0) {
