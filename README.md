@@ -18,13 +18,13 @@ Nukkit++
 
 __A Nuclear-Powered Server Software For Minecraft: Pocket Edition__
 
-[![CircleCI](https://circleci.com/gh/ThePocketTeam/Nukkit/tree/master.png?circle-token=143b784db794a43173e9850f13eed6f6be1f8c8c)](https://circleci.com/gh/ThePocketTeam/Nukkit)
+[![CircleCI](https://circleci.com/gh/ThePocketTeam/NukkitPlusPlus/tree/master.png?circle-token=143b784db794a43173e9850f13eed6f6be1f8c8c)](https://circleci.com/gh/ThePocketTeam/NukkitPlusPlus)
 
 -------------
 
 Get Nukkit++
 -------------
-* __[Circle CI](https://circleci.com/gh/ThePocketTeam/Nukkit/tree/master/)__ (**login required**)
+* __[Circle CI](https://circleci.com/gh/ThePocketTeam/NukkitPlusPlus/tree/master/)__ (**login required**)
 
 Introduction
 -------------
