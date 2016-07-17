@@ -1096,7 +1096,7 @@ public class Server {
     }
 
     public String getName() {
-        return "Nukkit";
+        return "Nukkit++";
     }
 
     public boolean isRunning() {
